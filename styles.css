@@ -58,45 +58,10 @@ a {
   text-decoration: none;
 }
 
-.brand-mark {
-  position: relative;
-  display: grid;
-  width: 41px;
-  height: 41px;
-  place-items: center;
-  border: 2px solid var(--ink);
-  border-top-color: var(--lime);
-  border-radius: 50%;
-}
-
-.brand-mark::before,
-.brand-mark::after,
-.brand-mark span {
-  position: absolute;
+.brand-symbol {
   display: block;
-  content: "";
-  border-radius: 50%;
-}
-
-.brand-mark::before {
-  width: 24px;
-  height: 24px;
-  border: 1px solid var(--ink);
-  border-right-color: transparent;
-}
-
-.brand-mark::after {
-  top: 3px;
-  right: 2px;
-  width: 7px;
-  height: 7px;
-  background: var(--lime);
-}
-
-.brand-mark span {
-  width: 8px;
-  height: 8px;
-  background: var(--ink);
+  width: 46px;
+  height: auto;
 }
 
 .brand-copy {
