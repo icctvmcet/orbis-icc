@@ -7,10 +7,11 @@
       name="description"
       content="Orbis by Islamic Cultural Centre — a new network connecting startup culture and alumni."
     />
-    <meta name="theme-color" content="#071d19" />
+    <meta name="theme-color" content="#082b4d" />
     <title>Orbis — An ICC Initiative</title>
     <link rel="icon" href="assets/orbis-mark.png" type="image/png" />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="styles.css?v=6" />
+    <link rel="stylesheet" href="assets/cards.css?v=1" />
   </head>
   <body>
     <div class="page-shell">
@@ -54,13 +55,74 @@
           </figure>
         </section>
 
+        <section class="orbit-sequence" id="orbit-sequence" aria-labelledby="orbit-sequence-title">
+          <div class="orbit-sticky">
+            <div class="orbit-sequence-copy">
+              <p>Connections in motion</p>
+              <h2 id="orbit-sequence-title">Built one meaningful connection at a time.</h2>
+            </div>
+
+            <div class="orbit-stage" aria-hidden="true">
+              <div class="orbit-glow"></div>
+              <svg class="orbit-vector" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="orbit-navy" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0" stop-color="#1d4a76" />
+                    <stop offset="0.52" stop-color="#0a3158" />
+                    <stop offset="1" stop-color="#061f3a" />
+                  </linearGradient>
+                  <radialGradient id="orbit-gold" cx="32%" cy="28%" r="70%">
+                    <stop offset="0" stop-color="#f7e6a3" />
+                    <stop offset="0.42" stop-color="#d7b65f" />
+                    <stop offset="1" stop-color="#9c7725" />
+                  </radialGradient>
+                  <filter id="orbit-shadow" x="-30%" y="-30%" width="160%" height="160%">
+                    <feDropShadow dx="2" dy="5" stdDeviation="4" flood-color="#061f3a" flood-opacity="0.18" />
+                  </filter>
+                  <filter id="planet-shadow" x="-50%" y="-50%" width="200%" height="200%">
+                    <feDropShadow dx="1" dy="3" stdDeviation="2" flood-color="#6e5016" flood-opacity="0.28" />
+                  </filter>
+                </defs>
+
+                <g class="orbit-vector-assembly" filter="url(#orbit-shadow)">
+                  <g class="orbit-part orbit-part-outer">
+                    <!-- Angular gaps: 130–142 degrees and -60–-36 degrees. -->
+                    <circle cx="250" cy="250" r="170" pathLength="360" fill="none" stroke="url(#orbit-navy)" stroke-width="21" stroke-dasharray="166 12 158 24" stroke-linecap="butt" transform="rotate(-36 250 250)" />
+                  </g>
+                  <g class="orbit-part orbit-part-middle">
+                    <!-- The left gold dot is centered in the gap at -166 degrees. -->
+                    <circle cx="250" cy="250" r="118" pathLength="360" fill="none" stroke="url(#orbit-navy)" stroke-width="7" stroke-dasharray="342 18" stroke-linecap="butt" transform="rotate(203 250 250)" />
+                  </g>
+                  <g class="orbit-part orbit-part-inner">
+                    <!-- The lower-right gold dot is centered in the gap at 45 degrees. -->
+                    <circle cx="250" cy="250" r="73" pathLength="360" fill="none" stroke="url(#orbit-navy)" stroke-width="8" stroke-dasharray="320 40" stroke-linecap="butt" transform="rotate(65 250 250)" />
+                  </g>
+                  <g class="orbit-part orbit-part-center">
+                    <circle cx="250" cy="250" r="39" fill="url(#orbit-navy)" />
+                  </g>
+                  <g class="orbit-part orbit-planet orbit-planet-one" filter="url(#planet-shadow)">
+                    <circle cx="135.505" cy="221.453" r="10" fill="url(#orbit-gold)" />
+                  </g>
+                  <g class="orbit-part orbit-planet orbit-planet-two" filter="url(#planet-shadow)">
+                    <circle cx="301.619" cy="301.619" r="14" fill="url(#orbit-gold)" />
+                  </g>
+                  <g class="orbit-part orbit-planet orbit-planet-three" filter="url(#planet-shadow)">
+                    <circle cx="363.752" cy="123.665" r="17" fill="url(#orbit-gold)" />
+                  </g>
+                </g>
+              </svg>
+            </div>
+
+          </div>
+        </section>
+
         <section class="vision" id="vision" aria-labelledby="vision-title">
           <div class="section-heading">
-            <p class="section-number">01 / The network</p>
+            <p class="section-number">02 / The network</p>
             <h2 id="vision-title">Built to move the community forward.</h2>
           </div>
 
-          <div class="pillars">
+          <div class="pillars" id="pillar-cards">
             <article class="pillar">
               <span class="pillar-icon people-icon" aria-hidden="true"></span>
               <p class="pillar-number">01</p>
@@ -97,6 +159,7 @@
       </footer>
     </div>
 
-    <script src="script.js"></script>
+    <script src="script.js?v=7"></script>
+    <script defer src="assets/cards.js?v=1"></script>
   </body>
 </html>
