@@ -4,14 +4,21 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "node build.mjs"
+    "build": "node build.mjs",
+    "test:portal": "node tests/portal-database.mjs"
   },
   "dependencies": {
+    "@supabase/supabase-js": "^2.118.0",
+    "d3-geo": "^3.1.1",
+    "i18n-iso-countries": "^7.14.0",
     "motion": "^14.7.1",
     "react": "^19.3.1",
-    "react-dom": "^19.3.1"
+    "react-dom": "^19.3.1",
+    "topojson-client": "^3.1.0",
+    "world-atlas": "^2.0.2"
   },
   "devDependencies": {
+    "@electric-sql/pglite": "^0.5.13",
     "esbuild": "^0.28.2"
   }
 }

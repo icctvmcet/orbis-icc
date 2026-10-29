@@ -1,12 +1,18 @@
-# Orbis landing page
+# Orbis website and CET community portal
 
-A landing page for Orbis, an Islamic Cultural Centre initiative, with scroll-driven SVG animation and React Bits flip cards powered by Motion.
+A website for Orbis, an Islamic Cultural Centre initiative, with scroll-driven SVG animation, React Bits flip cards, and a Supabase-backed student/alumni portal. The portal includes email verification, profiles, an alumni world map, a member directory, mentoring filters, global chat, threaded questions, reports, and private feedback.
+
+## Supabase setup
+
+Copy the entire [`supabase/001_orbis_portal.sql`](supabase/001_orbis_portal.sql) into the new project's SQL Editor and run it. Follow [`supabase/SETUP.md`](supabase/SETUP.md) for email confirmation, SMTP, redirect URLs and the two public environment variables. The local `.env` now connects the supplied Supabase project. Set the same two variables in Netlify before deploying; `.env` is deliberately ignored by Git. A checkout without either variable builds in preview mode without fake members or counts.
 
 ## Preview locally
 
-Run `npm ci` followed by `npm run build` to compile the React card section. Then open `index.html` in a browser or serve the project with a local static server. Rebuild after editing files in `src/`.
+Run `npm ci` followed by `npm run build` to compile the React components. Serve the output with `python -m http.server 4173 --bind 127.0.0.1 --directory dist`, then visit `http://127.0.0.1:4173/` or `/portal.html`. Rebuild after editing files in `src/` or changing `.env`.
 
-The rest of the page stays plain HTML, CSS, and JavaScript. The generated card bundle is a local classic script, so direct `file://` previews work too. If the bundle is unavailable, the original three descriptions remain visible as a static fallback.
+The landing page stays plain HTML, CSS, and JavaScript with React islands for cards and the map; the portal is a separate React entry point. Generated bundles are local classic scripts, so visual `file://` previews work too. Real authentication must use HTTP/HTTPS for email callbacks.
+
+Run `npm run test:portal` to validate the SQL and RLS policies in an isolated PostgreSQL engine. This does not connect to or modify your Supabase project. Hosted authentication and email delivery must also be tested after configuration.
 
 ## Deploy to Netlify
 

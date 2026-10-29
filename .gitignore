@@ -1,4 +1,10 @@
 node_modules/
 dist/
+.env
+.env.local
+assets/portal.js
+assets/portal.css
+assets/home-map.js
+assets/home-map.css
 assets/cards.js
 assets/cards.css

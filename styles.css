@@ -168,6 +168,7 @@ a {
 
 .hero-actions {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: 32px;
   margin-top: 44px;
@@ -629,6 +630,14 @@ a {
 
   .header-link span {
     font-size: 16px;
+  }
+
+  .hero-actions .header-link {
+    width: auto;
+    height: auto;
+    border: 0;
+    border-radius: 0;
+    font-size: 14px;
   }
 
   .hero {
