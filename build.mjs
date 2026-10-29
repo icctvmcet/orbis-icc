@@ -21,6 +21,8 @@ await build({
   entryPoints: {portal:'src/portal/App.jsx','home-map':'src/portal/home-map.jsx'},
   outdir: 'assets', bundle: true, format: 'iife', jsx: 'automatic', minify: true,
   target: ['es2020'], define: { 'process.env.NODE_ENV': '"production"', __SUPABASE_CONFIG__: JSON.stringify(config) },
+  loader: { '.woff2': 'file' }, assetNames: 'fontfiles/[name]-[hash]',
+  banner: { css: '/* Hallmark · theme: brand · genre: editorial · generated from stamped source · v2.0.0 */\n/* Hallmark · pre-emit critique: P4 H5 E4 S4 R5 V4 · shared Orbis system */' },
   legalComments: 'eof'
 });
 
@@ -33,10 +35,12 @@ await build({
   minify: true,
   target: ['es2020'],
   define: { 'process.env.NODE_ENV': '"production"' },
+  loader: { '.woff2': 'file' }, assetNames: 'fontfiles/[name]-[hash]',
+  banner: { css: '/* Hallmark · theme: brand · genre: editorial · generated from stamped source · v2.0.0 */\n/* Hallmark · pre-emit critique: P4 H5 E4 S4 R5 V4 · shared Orbis system */' },
   legalComments: 'eof'
 });
 await mkdir('dist', { recursive: true });
-for (const file of ['index.html', 'styles.css', 'script.js', 'portal.html']) {
+for (const file of ['index.html', 'styles.css', 'tokens.css', 'base.css', 'script.js', 'portal.html']) {
   await copyFile(file, `dist/${file}`);
 }
 await cp('assets', 'dist/assets', { recursive: true });

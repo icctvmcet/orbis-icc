@@ -1,0 +1,14 @@
+{
+  "scanned": "2026-10-30",
+  "checkpoint": "b81f26e",
+  "findings": {
+    "fonts": "Georgia display and Inter/system body in styles.css:26 and styles.css:149; new editorial pairing Instrument Serif + DM Sans",
+    "palette": "Existing navy #0a3158, gold #c5a24f, cream #f2ecdf and paper #f8f4eb (styles.css:1)",
+    "motion": "Motion React flip cards; custom SVG scroll progress; measured sliding PortalNav",
+    "framework": "Static landing with React islands, React portal, esbuild, Supabase",
+    "material": "assets/orbis-mark.png and assets/orbis-logo.png supplied by user; live alumni map; no photographs or testimonials",
+    "screens": ["index.html", "portal.html#home", "portal.html#register", "portal.html#login", "portal.html#directory", "portal.html#community", "portal.html#feedback", "portal.html#profile", "portal.html#verify", "portal.html#forgot", "portal.html#recover"]
+  },
+  "preserve": ["palette", "supplied logos", "all routes and wiring", "privacy and consent copy", "scroll SVG", "flip cards", "sliding navigation"],
+  "introduce": ["editorial composition", "shared design tokens", "local fonts", "rule-led app layouts"]
+}

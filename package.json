@@ -8,6 +8,8 @@
     "test:portal": "node tests/portal-database.mjs"
   },
   "dependencies": {
+    "@fontsource/dm-sans": "^5.3.0",
+    "@fontsource/instrument-serif": "^5.3.0",
     "@supabase/supabase-js": "^2.118.0",
     "d3-geo": "^3.1.1",
     "i18n-iso-countries": "^7.14.0",

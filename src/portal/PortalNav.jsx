@@ -26,7 +26,7 @@ export default function PortalNav({active,onSelect}) {
   },[target]);
 
   return <nav ref={nav} className="portal-nav" aria-label="Portal navigation" onPointerLeave={()=>setHovered(null)}>
-    {indicator&&<span className="portal-nav-indicator" aria-hidden="true" style={{transform:`translate(${indicator.x}px, ${indicator.y}px)`,width:indicator.width,height:indicator.height,opacity:indicator.visible?1:0}}/>}
+    {indicator&&<span className="portal-nav-indicator" aria-hidden="true" style={{transform:`translate(${indicator.x}px, ${indicator.y}px) scale(${indicator.width/100}, ${indicator.height/100})`,borderRadius:`${5000/indicator.width}px / ${5000/indicator.height}px`,opacity:indicator.visible?1:0}}/>}
     {items.map(([route,label])=><button
       key={route}
       ref={element=>{buttons.current[route]=element;}}

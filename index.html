@@ -8,11 +8,11 @@
       content="Orbis by Islamic Cultural Centre — a new network connecting startup culture and alumni."
     />
     <meta name="theme-color" content="#082b4d" />
-    <title>Orbis — An ICC Initiative</title>
+    <title>Orbis: An ICC Initiative</title>
     <link rel="icon" href="assets/orbis-mark.png" type="image/png" />
-    <link rel="stylesheet" href="styles.css?v=6" />
-    <link rel="stylesheet" href="assets/cards.css?v=1" />
-    <link rel="stylesheet" href="assets/home-map.css?v=1" />
+    <link rel="stylesheet" href="styles.css?v=8" />
+    <link rel="stylesheet" href="assets/cards.css?v=8" />
+    <link rel="stylesheet" href="assets/home-map.css?v=8" />
   </head>
   <body>
     <div class="page-shell">
@@ -21,29 +21,26 @@
           <img class="brand-symbol" src="assets/orbis-mark.png" alt="" width="182" height="182" />
           <span class="brand-copy">
             <strong>ORBIS</strong>
-            <small>People · Skills · Impact</small>
+            <small>People. Skills. Impact.</small>
           </span>
         </a>
 
         <a class="header-link" href="portal.html">
           Member portal
-          <span aria-hidden="true">↗</span>
         </a>
       </header>
 
       <main id="top">
         <section class="hero" aria-labelledby="hero-title">
           <div class="hero-content">
-            <p class="eyebrow"><span></span> An Islamic Cultural Centre initiative</p>
-            <h1 id="hero-title">A new orbit for <em>people, skills,</em> and impact.</h1>
+            <h1 id="hero-title">A new orbit<br />for CET.</h1>
             <p class="hero-copy">
-              Islamic Cultural Centre is building a new network to connect startup culture and alumni—bringing ambitious people, meaningful ideas, and new opportunities together.
+              Connecting CET students, alumni and startup culture through shared opportunities.
             </p>
 
             <div class="hero-actions">
-              <a class="primary-button" href="#vision">Discover the vision</a>
-              <a class="header-link" href="portal.html#register">Join the network ↗</a>
-              <p><strong>ORBIS</strong> <span>Coming soon</span></p>
+              <a class="primary-button" href="portal.html#register">Join the network</a>
+              <a class="header-link" href="#vision">Discover the vision</a>
             </div>
           </div>
 
@@ -57,11 +54,16 @@
           </figure>
         </section>
 
+        <section class="landing-network" aria-label="Global alumni network">
+          <div class="network-cta"><p>From CET to the world. Find your next connection.</p><a class="gold-button" href="portal.html">Explore the member portal</a></div>
+          <div id="alumni-world-map"><p>The alumni map is loading…</p></div>
+        </section>
+
         <section class="orbit-sequence" id="orbit-sequence" aria-labelledby="orbit-sequence-title">
           <div class="orbit-sticky">
             <div class="orbit-sequence-copy">
-              <p>Connections in motion</p>
-              <h2 id="orbit-sequence-title">Built one meaningful connection at a time.</h2>
+              <h2 id="orbit-sequence-title">Connections in motion.</h2>
+              <p>Built one meaningful connection at a time.</p>
             </div>
 
             <div class="orbit-stage" aria-hidden="true">
@@ -69,20 +71,20 @@
               <svg class="orbit-vector" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
                 <defs>
                   <linearGradient id="orbit-navy" x1="0" y1="0" x2="1" y2="1">
-                    <stop offset="0" stop-color="#1d4a76" />
-                    <stop offset="0.52" stop-color="#0a3158" />
-                    <stop offset="1" stop-color="#061f3a" />
+                    <stop offset="0" stop-color="var(--orbit-navy-start)" />
+                    <stop offset="0.52" stop-color="var(--orbit-navy-middle)" />
+                    <stop offset="1" stop-color="var(--orbit-shadow)" />
                   </linearGradient>
                   <radialGradient id="orbit-gold" cx="32%" cy="28%" r="70%">
-                    <stop offset="0" stop-color="#f7e6a3" />
-                    <stop offset="0.42" stop-color="#d7b65f" />
-                    <stop offset="1" stop-color="#9c7725" />
+                    <stop offset="0" stop-color="var(--orbit-gold-light)" />
+                    <stop offset="0.42" stop-color="var(--orbit-gold-mid)" />
+                    <stop offset="1" stop-color="var(--orbit-gold-end)" />
                   </radialGradient>
                   <filter id="orbit-shadow" x="-30%" y="-30%" width="160%" height="160%">
-                    <feDropShadow dx="2" dy="5" stdDeviation="4" flood-color="#061f3a" flood-opacity="0.18" />
+                    <feDropShadow dx="2" dy="5" stdDeviation="4" flood-color="var(--orbit-shadow)" flood-opacity="0.18" />
                   </filter>
                   <filter id="planet-shadow" x="-50%" y="-50%" width="200%" height="200%">
-                    <feDropShadow dx="1" dy="3" stdDeviation="2" flood-color="#6e5016" flood-opacity="0.28" />
+                    <feDropShadow dx="1" dy="3" stdDeviation="2" flood-color="var(--planet-shadow)" flood-opacity="0.28" />
                   </filter>
                 </defs>
 
@@ -120,8 +122,8 @@
 
         <section class="vision" id="vision" aria-labelledby="vision-title">
           <div class="section-heading">
-            <p class="section-number">02 / The network</p>
-            <h2 id="vision-title">Built to move the community forward.</h2>
+            <p class="section-number">Students, alumni and founders.</p>
+            <h2 id="vision-title">Built for the CET community.</h2>
           </div>
 
           <div class="pillars" id="pillar-cards">
@@ -129,7 +131,7 @@
               <span class="pillar-icon people-icon" aria-hidden="true"></span>
               <p class="pillar-number">01</p>
               <h3>People</h3>
-              <p>Connecting alumni, founders, builders, mentors, and the next generation of changemakers.</p>
+              <p>Connecting alumni, founders, builders, mentors, and students building what comes next.</p>
             </article>
 
             <article class="pillar featured">
@@ -148,26 +150,21 @@
           </div>
         </section>
 
-        <section class="landing-network" aria-label="Global alumni network">
-          <div class="network-cta"><p>From CET to the world. Find your next connection.</p><a class="gold-button" href="portal.html">Explore the member portal ↗</a></div>
-          <div id="alumni-world-map"><p>The alumni map is loading…</p></div>
-        </section>
-
         <section class="closing" aria-label="Coming soon">
-          <p>People · Skills · Impact</p>
+          <p>An Islamic Cultural Centre initiative</p>
           <h2>A meaningful new network is on the horizon.</h2>
-          <div class="status"><span></span> Launching soon</div>
+          <div class="status">Launching soon</div>
         </section>
       </main>
 
       <footer class="site-footer">
         <p>© <span id="year"></span> Islamic Cultural Centre</p>
-        <p>Orbis · People. Skills. Impact.</p>
+        <p>Orbis. People. Skills. Impact.</p>
       </footer>
     </div>
 
     <script src="script.js?v=7"></script>
-    <script defer src="assets/cards.js?v=1"></script>
-    <script defer src="assets/home-map.js?v=1"></script>
+    <script defer src="assets/cards.js?v=8"></script>
+    <script defer src="assets/home-map.js?v=8"></script>
   </body>
 </html>

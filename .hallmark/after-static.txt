@@ -1,0 +1,9 @@
+assets\cards.css
+  WARN 25 :3 measure 28ch on .pillar-face-body p (45-75ch range) | fix: Set prose measure between 45 and 75ch; a one-sentence lede or caption from 28ch
+assets\home-map.css
+  WARN F4 :3 2 filled primary-button recipes: .primary-button + .gold-button | fix: One filled primary per page; demote the rest to outline/quiet variants
+  WARN F6 :3 numeric selector .world-stats span at display size without tabular figures | fix: Add font-variant-numeric: tabular-nums
+assets\portal.css
+  WARN F6 :3 numeric selector .world-stats span at display size without tabular figures
+sloplint: 0 FAIL, 4 WARN across 18 file(s).
+kept: links 7/7, fields 1/1, handlers 75/75, script hooks 15/15; before 403 FAIL, 161 REFLEX, now 0 FAIL, 0 REFLEX

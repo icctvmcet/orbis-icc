@@ -16,30 +16,30 @@ export default function ProfileForm({initial=blankProfile,onSubmit,register=fals
   }
   return <form className="profile-form" onSubmit={submit}>
     {register&&<ol className="form-steps" aria-label="Registration steps">{['About you','CET & career','Your profile'].map((label,i)=><li key={label} aria-current={step===i?'step':undefined}><span>{i+1}</span>{label}</li>)}</ol>}
-    {(!register||step===0)&&<fieldset><legend>Start with you</legend><div className="form-grid">
+    {(!register||step===0)&&<fieldset><legend>About you</legend><div className="form-grid">
       <div className="wide role-choice"><span>I am a CET</span>{['student','alumni'].map(role=><label key={role}><input type="radio" name="member_type" checked={p.member_type===role} onChange={()=>set('member_type',role)} />{role==='student'?'Student':'Alumnus / alumna'}</label>)}</div>
       {field('full_name','Full name','text',{autoComplete:'name',minLength:2,maxLength:100})}
-      {field('dob','Date of birth · private','date',{min:'1900-01-01',max:new Date(Date.now()-86400000).toISOString().slice(0,10),autoComplete:'bday'})}
-      {field('phone','Phone with country code · private','tel',{placeholder:'+919876543210',pattern:'\\+[1-9][0-9]{7,14}',maxLength:16,autoComplete:'tel'})}
-      {register&&<>{field('email','Email address','email',{autoComplete:'email',maxLength:254})}{field('password','Password · at least 12 characters','password',{autoComplete:'new-password',minLength:12,maxLength:128})}</>}
+      {field('dob','Date of birth (private)','date',{min:'1900-01-01',max:new Date(Date.now()-86400000).toISOString().slice(0,10),autoComplete:'bday'})}
+      {field('phone','Phone with country code (private)','tel',{placeholder:'+919876543210',pattern:'\\+[1-9][0-9]{7,14}',maxLength:16,autoComplete:'tel'})}
+      {register&&<>{field('email','Email address','email',{autoComplete:'email',maxLength:254})}{field('password','Password (at least 12 characters)','password',{autoComplete:'new-password',minLength:12,maxLength:128})}</>}
     </div><p className="portal-note">DOB and phone are visible only to you and authorized database administrators. They never appear on the map or directory.</p></fieldset>}
     {(!register||step===1)&&<><fieldset><legend>Your time at CET</legend><div className="form-grid">
       {select('program','Programme',programs)}
       {p.program==='B.Tech'&&select('branch','B.Tech branch',branches)}
       {p.program==='M.Tech'&&field('specialization','M.Tech specialization','text',{placeholder:'Enter any specialization',maxLength:150})}
-      {select('graduation_year','Class of · graduation / expected year',years)}
-    </div></fieldset><fieldset><legend>{p.member_type==='alumni'?'Where life has taken you':'Where you are now'}</legend><div className="form-grid">
+      {select('graduation_year','Graduation year (completed or expected)',years)}
+    </div></fieldset><fieldset><legend>{p.member_type==='alumni'?'Location and career':'Current location'}</legend><div className="form-grid">
       {select('country_code','Current country',countryOptions)}{field('city','Current city','text',{maxLength:120})}
       {p.member_type==='alumni'&&<>{select('employment_status','Current work status',[['employed','Employed'],['self_employed','Self-employed / founder'],['seeking_work','Looking for work'],['studying','Further studies'],['retired','Retired'],['other','Other']])}
       {field('job_title','Current position / role','text',{required:['employed','self_employed'].includes(p.employment_status),maxLength:150})}
       {field('company_name','Company / organization','text',{required:['employed','self_employed'].includes(p.employment_status),maxLength:150})}
-      {field('company_location','Company location · city, country','text',{required:['employed','self_employed'].includes(p.employment_status),maxLength:200})}</>}
+      {field('company_location','Company location (city, country)','text',{required:['employed','self_employed'].includes(p.employment_status),maxLength:200})}</>}
     </div></fieldset></>}
-    {(!register||step===2)&&<fieldset><legend>Make yourself known</legend><div className="form-grid">
-      {field('linkedin','LinkedIn · optional','url',{placeholder:'https://www.linkedin.com/in/you'})}
-      {field('github','GitHub · optional','url',{placeholder:'https://github.com/you'})}
-      {field('portfolio','Portfolio website · optional','url',{placeholder:'https://your-website.com'})}
-      <label className="wide">A little about you · optional<textarea value={p.bio} maxLength={500} rows={3} onChange={e=>set('bio',e.target.value)} placeholder="Your interests, skills, or what you hope to build."/></label>
+    {(!register||step===2)&&<fieldset><legend>Profile and visibility</legend><div className="form-grid">
+      {field('linkedin','LinkedIn (optional)','url',{placeholder:'https://www.linkedin.com/in/you'})}
+      {field('github','GitHub (optional)','url',{placeholder:'https://github.com/you'})}
+      {field('portfolio','Portfolio website (optional)','url',{placeholder:'https://your-website.com'})}
+      <label className="wide">A little about you (optional)<textarea value={p.bio} maxLength={500} rows={3} onChange={e=>set('bio',e.target.value)} placeholder="Your interests, skills, or what you hope to build."/></label>
       <label className="check-label wide"><input type="checkbox" checked={p.mentorship} onChange={e=>set('mentorship',e.target.checked)}/>I’m open to mentoring or sharing my experience.</label>
       <label className="check-label wide"><input type="checkbox" checked={p.directory_visible} onChange={e=>set('directory_visible',e.target.checked)}/>Show my profile to verified members and include me in public country totals if I’m alumni.</label>
     </div><p className="portal-note">Directory visibility includes your name, CET details, location, career, bio and links. You can change it anytime. Your name accompanies messages you choose to post in the community, even with a hidden directory profile.</p>
